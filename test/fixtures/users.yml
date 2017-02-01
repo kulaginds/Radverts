@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  banned: 1
+  moderator: 1
+  administrator: 1
+
+two:
+  banned: 1
+  moderator: 1
+  administrator: 1
