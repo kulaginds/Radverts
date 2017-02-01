@@ -1,0 +1,29 @@
+.container {
+	width: 800px;
+}
+
+.filter_panel {
+	display: block;
+}
+
+.show_filter_panel_btn {
+	display: none;
+	margin-bottom: 20px;
+}
+
+.container .list .panel .panel-body img {
+	margin-right: 15px;
+}
+
+.container .list .panel .panel-footer time {
+	display: inline-block;
+	margin-top: 6px;
+}
+
+.container .content {
+	margin-bottom: 20px;
+}
+
+.give_advert {
+	margin-left: 5px;
+}

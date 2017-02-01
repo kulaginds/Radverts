@@ -1,0 +1,84 @@
+/*==========  Non-Mobile First Method  ==========*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px) {
+	.container {
+		width: 800px;
+	}
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) {
+	.container {
+		width: auto;
+	}
+
+	.filter_panel {
+		display: none;
+	}
+
+	.show_filter_panel_btn {
+		display: block;
+	}
+
+	.sidebar {
+		margin-bottom: 20px;
+	}
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+	.container {
+		width: auto;
+	}
+
+	.filter_panel {
+		display: none;
+	}
+
+	.show_filter_panel_btn {
+		display: block;
+	}
+
+	.sidebar {
+		margin-bottom: 20px;
+	}
+}
+
+/* Extra Small Devices, Phones */ 
+@media only screen and (max-width : 480px) {
+	.container {
+		width: auto;
+	}
+
+	.filter_panel {
+		display: none;
+	}
+
+	.show_filter_panel_btn {
+		display: block;
+	}
+
+	.sidebar {
+		margin-bottom: 20px;
+	}
+}
+
+/* Custom, iPhone Retina */ 
+@media only screen and (max-width : 320px) {
+	.container {
+		width: auto;
+	}
+
+	.filter_panel {
+		display: none;
+	}
+
+	.show_filter_panel_btn {
+		display: block;
+	}
+
+	.sidebar {
+		margin-bottom: 20px;
+	}
+}
