@@ -27,3 +27,7 @@
 .give_advert {
 	margin-left: 5px;
 }
+
+section {
+	display: none;
+}

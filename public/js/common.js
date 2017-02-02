@@ -35,7 +35,7 @@ $(document).ready(function() {
 			model.on('change:active', this.updateActive, this);
 		},
 		updateActive:function(model, active) {
-			if (active) {
+			if (active && this.selected != model) {
 				if (this.selected != null) {
 					this.selected.set('active', false);
 				}
@@ -71,7 +71,9 @@ $(document).ready(function() {
 			}
 		},
 		itemClick:function() {
-			this.model.set('active', !this.model.get('active'));
+			if (!this.model.get('active')) {
+				this.model.set('active', true);
+			}
 		},
 		updateActive:function(model, active) {
 			if (active) {
@@ -172,22 +174,32 @@ $(document).ready(function() {
 		catalog:function() {
 			console.log('catalog page');
 			top_menu_items_collection.activateByUrl('#catalog');
+			$("section").removeClass('show');
+			$("#catalog_section").addClass('show');
 		},
 		myadverts:function() {
 			console.log('myadverts page');
 			top_menu_items_collection.activateByUrl('#myadverts');
+			$("section").removeClass('show');
+			$("#myadverts_section").addClass('show');
 		},
 		giveadv:function() {
 			console.log('giveadv page');
 			top_menu_items_collection.activateByUrl('#giveadv');
+			$("section").removeClass('show');
+			$("#giveadv_section").addClass('show');
 		},
 		moderation:function() {
 			console.log('moderation page');
 			top_menu_items_collection.activateByUrl('#moderation');
+			$("section").removeClass('show');
+			$("#moderation_section").addClass('show');
 		},
 		administration:function() {
 			console.log('administration page');
 			top_menu_items_collection.activateByUrl('#administration');
+			$("section").removeClass('show');
+			$("#administration_section").addClass('show');
 		}
 	});
 
