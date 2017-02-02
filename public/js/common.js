@@ -173,33 +173,28 @@ $(document).ready(function() {
 		},
 		catalog:function() {
 			console.log('catalog page');
-			top_menu_items_collection.activateByUrl('#catalog');
-			$("section").removeClass('show');
-			$("#catalog_section").addClass('show');
+			this._openSection('catalog');
 		},
 		myadverts:function() {
 			console.log('myadverts page');
-			top_menu_items_collection.activateByUrl('#myadverts');
-			$("section").removeClass('show');
-			$("#myadverts_section").addClass('show');
+			this._openSection('myadverts');
 		},
 		giveadv:function() {
 			console.log('giveadv page');
-			top_menu_items_collection.activateByUrl('#giveadv');
-			$("section").removeClass('show');
-			$("#giveadv_section").addClass('show');
+			this._openSection('giveadv');
 		},
 		moderation:function() {
 			console.log('moderation page');
-			top_menu_items_collection.activateByUrl('#moderation');
-			$("section").removeClass('show');
-			$("#moderation_section").addClass('show');
+			this._openSection('moderation');
 		},
 		administration:function() {
 			console.log('administration page');
-			top_menu_items_collection.activateByUrl('#administration');
+			this._openSection('administration');
+		},
+		_openSection:function(section_name) {
+			top_menu_items_collection.activateByUrl('#' + section_name);
 			$("section").removeClass('show');
-			$("#administration_section").addClass('show');
+			$("#" + section_name + "_section").addClass('show');
 		}
 	});
 
