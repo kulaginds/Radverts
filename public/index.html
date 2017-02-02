@@ -19,17 +19,9 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#">Radverts</a>
+				<a class="navbar-brand" href="/" target="_blank">Radverts</a>
 			</div>
-			<div class="collapse navbar-collapse" id="top_menu">
-				<ul class="nav navbar-nav navbar-right">
-					<li class="active"><a href="#">Link</a></li>
-					<li><a href="#">Link</a></li>
-					<li><a href="#">Link</a></li>
-					<li><a href="#">Link</a></li>
-					<a href="#" class="btn btn-success navbar-btn give_advert">Подать объявление</a>
-				</ul>
-			</div>
+			<div class="collapse navbar-collapse" id="top_menu"></div>
 		</div>
 	</nav>
 
@@ -123,7 +115,13 @@
 			</div>
 		</div>
 	</div>
-	
+
+	<!-- templates -->
+	<script type="text/template" id="top_menu_item_template">
+		<a href="<%= url %>"><%= title %></a>
+	</script>
+
+	<!-- scripts -->
 	<script src="/libs/jquery/jquery-3.1.1.min.js"></script>
 	<script src="/libs/bootstrap/js/bootstrap.min.js"></script>
 	<script src="/libs/json2/json2.min.js"></script>
