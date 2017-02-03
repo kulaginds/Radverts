@@ -7,6 +7,8 @@ Radverts.Models.Section = Backbone.Model.extend({
 	defaults: {
 		title  :'Link',
 		url    :'#',
+		id     :null,
+		route  :null,
 		active :false,
 		giveAdv:false
 	}
@@ -20,7 +22,7 @@ Radverts.Collections.Sections = Backbone.Collection.extend({
 	selected:null,
 
 	addCallbacks:function() {
-		_.each(this.models, this.addChangeEvent, this);
+		this.each(this.addChangeEvent);
 	},
 
 	addChangeEvent:function(model) {
@@ -37,13 +39,15 @@ Radverts.Collections.Sections = Backbone.Collection.extend({
 		}
 	},
 
-	activateByUrl:function(url) {
-		_.each(this.models, function(model) {
-			var model_url = model.get('url');
+	initRouter:function(router) {
+		this.router = router;
+		this.each(this.initOneRoute, this);
+	},
 
-			if (url == model_url) {
-				model.set('active', true);
-			}
+	initOneRoute:function(model) {
+		this.router.on('route:' + model.get('route'), function() {
+			model.set('active', true);
+			this.updateActive(model, true);
 		}, this);
 	}
 

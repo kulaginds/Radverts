@@ -7,27 +7,32 @@ var sections_collection = new Radverts.Collections.Sections([
 	{
 		title:'Каталог',
 		url  :'#catalog',
-		id   :'catalog_section'
+		id   :'catalog_section',
+		route:'catalog'
 	},
 	{
 		title:'Мои объявления',
 		url  :'#myadverts',
-		id   :'myadverts_section'
+		id   :'myadverts_section',
+		route:'myadverts'
 	},
 	{
 		title:'Модерация',
 		url  :'#moderation',
-		id   :'moderation_section'
+		id   :'moderation_section',
+		route:'moderation'
 	},
 	{
 		title:'Администрация',
 		url  :'#administration',
-		id   :'administration_section'
+		id   :'administration_section',
+		route:'administration'
 	},
 	{
 		title  :'Подать объявление',
 		url    :'#giveadv',
 		id     :'giveadv_section',
+		route  :'giveadv',
 		giveAdv:true
 	}
 ]);
@@ -48,3 +53,6 @@ var content_view = new Radverts.Views.Content({
 
 $('#app').append(header_view.el);
 $('#app').append(content_view.el);
+
+sections_collection.initRouter(router);
+Backbone.history.start();
