@@ -10,7 +10,13 @@
 	<link rel="stylesheet" href="/css/media.css">
 </head>
 <body>
-	<nav class="navbar navbar-default">
+	<div id="app"></div>
+
+	<!-- templates -->
+	<script type="text/template" id="top_menu_item_template">
+		<a href="<%= url %>"><%= title %></a>
+	</script>
+	<script type="text/template" id="header_template">
 		<div class="container">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#top_menu" aria-expanded="false">
@@ -23,9 +29,8 @@
 			</div>
 			<div class="collapse navbar-collapse" id="top_menu"></div>
 		</div>
-	</nav>
-
-	<section class="container" id="catalog_section">
+	</script>
+	<script type="text/template" id="catalog_section_template">
 		<div class="row">
 			<div class="col-md-4 sidebar">
 				<button type="button" class="btn btn-default btn-block show_filter_panel_btn" data-toggle="collapse" data-target="#filter_panel">
@@ -114,9 +119,8 @@
 				</nav>
 			</div>
 		</div>
-	</section>
-
-	<section class="container" id="myadverts_section">
+	</script>
+	<script type="text/template" id="myadverts_section_template">
 		<div class="row">
 			<div class="col-md-12">
 				<ol class="breadcrumb">
@@ -203,9 +207,8 @@
 				</nav>
 			</div>
 		</div>
-	</section>
-
-	<section class="container" id="giveadv_section">
+	</script>
+	<script type="text/template" id="giveadv_section_template">
 		<div class="row">
 			<div class="col-md-12">
 				<ol class="breadcrumb">
@@ -240,9 +243,8 @@
 				</div>
 			</div>
 		</div>
-	</section>
-
-	<section class="container" id="moderation_section">
+	</script>
+	<script type="text/template" id="moderation_section_template">
 		<div class="row">
 			<div class="col-md-12">
 				<ol class="breadcrumb">
@@ -323,9 +325,8 @@
 				</nav>
 			</div>
 		</div>
-	</section>
-
-	<section class="container" id="administration_section">
+	</script>
+	<script type="text/template" id="administration_section_template">
 		<div class="row">
 			<div class="col-md-4 sidebar">
 				<button type="button" class="btn btn-default btn-block show_filter_panel_btn" data-toggle="collapse" data-target="#filter_panel">
@@ -433,11 +434,6 @@
 				</nav>
 			</div>
 		</div>
-	</section>
-
-	<!-- templates -->
-	<script type="text/template" id="top_menu_item_template">
-		<a href="<%= url %>"><%= title %></a>
 	</script>
 
 	<!-- scripts -->
@@ -447,7 +443,9 @@
 	<script src="/libs/underscore/underscore-min.js"></script>
 	<script src="/libs/backbone/backbone-min.js"></script>
 	<script src="/js/app-common.js"></script>
+	<script src="/js/app-component-header.js"></script>
 	<script src="/js/app-component-topmenu.js"></script>
+	<script src="/js/app-component-content.js"></script>
 	<script src="/js/app-render.js"></script>
 	<script src="/js/app-router.js"></script>
 </body>

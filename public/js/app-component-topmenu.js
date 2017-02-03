@@ -2,54 +2,7 @@
 	Application component: TopMenu
 */
 
-Radverts.Models.TopMenuItem = Backbone.Model.extend({
-
-	defaults: {
-		title  :'Link',
-		url    :'#',
-		active :false,
-		giveAdv:false
-	}
-
-});
-
-Radverts.Collections.TopMenuCollection = Backbone.Collection.extend({
-
-	model:Radverts.Models.TopMenuItem,
-
-	selected:null,
-
-	addCallbacks:function() {
-		_.each(this.models, this.addChangeEvent, this);
-	},
-
-	addChangeEvent:function(model) {
-		model.on('change:active', this.updateActive, this);
-	},
-
-	updateActive:function(model, active) {
-		if (active && this.selected != model) {
-			if (this.selected != null) {
-				this.selected.set('active', false);
-			}
-
-			this.selected = model;
-		}
-	},
-
-	activateByUrl:function(url) {
-		_.each(this.models, function(model) {
-			var model_url = model.get('url');
-
-			if (url == model_url) {
-				model.set('active', true);
-			}
-		}, this);
-	}
-
-});
-
-Radverts.Views.TopMenuItemView = Backbone.View.extend({
+Radverts.Views.TopMenuItem = Backbone.View.extend({
 
 	tagName:'li',
 
@@ -88,7 +41,7 @@ Radverts.Views.TopMenuItemView = Backbone.View.extend({
 
 });
 
-Radverts.Views.TopMenuGiveAdvItemView = Backbone.View.extend({
+Radverts.Views.TopMenuGiveAdvItem = Backbone.View.extend({
 
 	tagName:'a',
 
@@ -108,12 +61,14 @@ Radverts.Views.TopMenuGiveAdvItemView = Backbone.View.extend({
 	},
 
 	itemClick:function() {
-		this.model.set('active', !this.model.get('active'));
+		if (this.model.get('active')) {
+			this.model.set('active', true);
+		}
 	}
 
 });
 
-Radverts.Views.TopMenuView = Backbone.View.extend({
+Radverts.Views.TopMenu = Backbone.View.extend({
 
 	tagName:'ul',
 
@@ -128,10 +83,10 @@ Radverts.Views.TopMenuView = Backbone.View.extend({
 	},
 
 	addOne:function(model) {
-		var _class = Radverts.Views.TopMenuItemView;
+		var _class = Radverts.Views.TopMenuItem;
 
 		if (model.get('giveAdv')) {
-			_class = Radverts.Views.TopMenuGiveAdvItemView;
+			_class = Radverts.Views.TopMenuGiveAdvItem;
 		}
 
 		var item = new _class({

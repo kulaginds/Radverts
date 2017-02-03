@@ -2,35 +2,49 @@
 	Application render
 */
 
-// TopMenu
-var top_menu_items_collection = new Radverts.Collections.TopMenuCollection([
+// Sections
+var sections_collection = new Radverts.Collections.Sections([
 	{
-		title :'Каталог',
-		url   :'#catalog',
+		title:'Каталог',
+		url  :'#catalog',
+		id   :'catalog_section'
 	},
 	{
 		title:'Мои объявления',
-		url  :'#myadverts'
+		url  :'#myadverts',
+		id   :'myadverts_section'
 	},
 	{
 		title:'Модерация',
-		url  :'#moderation'
+		url  :'#moderation',
+		id   :'moderation_section'
 	},
 	{
 		title:'Администрация',
-		url  :'#administration'
+		url  :'#administration',
+		id   :'administration_section'
 	},
 	{
 		title  :'Подать объявление',
 		url    :'#giveadv',
+		id     :'giveadv_section',
 		giveAdv:true
 	}
 ]);
 
-top_menu_items_collection.addCallbacks();
+sections_collection.addCallbacks();
 
-var top_menu_view = new Radverts.Views.TopMenuView({
-	collection:top_menu_items_collection
+var top_menu_view = new Radverts.Views.TopMenu({
+	collection:sections_collection
 });
 
-$('#top_menu').html(top_menu_view.el);
+var header_view = new Radverts.Views.Header({
+	top_menu_view:top_menu_view
+});
+
+var content_view = new Radverts.Views.Content({
+	collection:sections_collection
+});
+
+$('#app').append(header_view.el);
+$('#app').append(content_view.el);

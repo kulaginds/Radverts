@@ -39,7 +39,7 @@ Radverts.Router = Backbone.Router.extend({
 	},
 
 	_openSection:function(section_name) {
-		top_menu_items_collection.activateByUrl('#' + section_name);
+		sections_collection.activateByUrl('#' + section_name);
 		$("section").removeClass('show');
 		$("#" + section_name + "_section").addClass('show');
 	}
