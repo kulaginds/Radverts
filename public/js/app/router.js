@@ -14,4 +14,3 @@ Radverts.Router = Backbone.Router.extend({
 });
 
 var router = new Radverts.Router();
-// Backbone.history.start();

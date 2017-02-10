@@ -53,34 +53,6 @@ Radverts.Collections.Sections = Backbone.Collection.extend({
 
 });
 
-Radverts.Views.Section = Backbone.View.extend({
-
-	tagName:'section',
-
-	className:'container',
-
-	initialize:function(options) {
-		this.template = template(options.id + '_template');
-
-		this.model.on('change:active', this.updateActive, this);
-		this.render();
-	},
-
-	render:function() {
-		this.$el.html(this.template({}));
-	},
-
-	updateActive:function(model, active) {
-		if (active) {
-			this.$el.addClass('show');
-		} else {
-			this.$el.removeClass('show');
-		}
-		this.render();
-	}
-
-});
-
 Radverts.Views.Content = Backbone.View.extend({
 
 	tagName:'div',
@@ -96,7 +68,10 @@ Radverts.Views.Content = Backbone.View.extend({
 	},
 
 	addOne:function(model) {
-		var section = new Radverts.Views.Section({
+		var class_name = model.get('route');
+		class_name     = class_name.charAt(0).toUpperCase() + class_name.substr(1, class_name.length-1)
+
+		var section = new Radverts.Views[class_name]({
 			model:model,
 			id   :model.get('id')
 		});

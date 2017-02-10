@@ -26,11 +26,58 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="/" target="_blank">Radverts</a>
+				<a class="navbar-brand" href="/" target="_blank"><%=title%></a>
 			</div>
 			<div class="collapse navbar-collapse" id="top_menu"></div>
 		</div>
 	</script>
+	<script type="text/template" id="filter_panel_template">
+		<button type="button" class="btn btn-default btn-block show_filter_panel_btn" data-toggle="collapse" data-target="#<%=target%>">
+			<%=button_title%>
+		</button>
+		<div id="<%=target%>" class="collapse filter_panel">
+			<div class="panel panel-default filter-panel">
+				<div class="panel-heading"><%=panel_title%></div>
+				<div class="panel-body">
+					<%=search_form%>
+				</div>
+			</div>
+		</div>
+	</script>
+	<script type="text/template" id="pagination_template">
+		<nav aria-label="pagination">
+			<ul class="pager">
+				<li class="previous"><a href="#"><span aria-hidden="true">&larr;</span> <%=previous_page_title%></a></li>
+				<li class="next"><a href="#"><%=next_page_title%> <span aria-hidden="true">&rarr;</span></a></li>
+			</ul>
+		</nav>
+	</script>
+	<script type="text/template" id="section_two_column_template">
+		<div class="row">
+			<div class="col-md-4 sidebar">
+				<%=sidebar%>
+			</div>
+			<div class="col-md-8">
+				<%=breadcrumb%>
+				<%=content%>
+				<% if (typeof(pagination) !== "undefined") { %>
+					<%=pagination%>
+				<% } %>
+			</div>
+		</div>
+	</script>
+	<script type="text/template" id="section_one_column_template">
+		<div class="row">
+			<div class="col-md-12">
+				<%=breadcrumb%>
+				<%=content%>
+				<% if (typeof(pagination) !== "undefined") { %>
+					<%=pagination%>
+				<% } %>
+			</div>
+		</div>
+	</script>
+	
 	<script type="text/template" id="catalog_section_template">
 		<div class="row">
 			<div class="col-md-4 sidebar">

@@ -19,7 +19,7 @@ Radverts.Views.Header = Backbone.View.extend({
 	},
 
 	render:function() {
-		this.$el.html(this.template());
+		this.$el.html(this.template({ title:'Radverts' }));
 		this.$el.find('#top_menu').html(this.top_menu_view.el);
 	}
 
