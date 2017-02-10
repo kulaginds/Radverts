@@ -25,7 +25,6 @@ Radverts.Views.Giveadv = Backbone.View.extend({
 		} else {
 			this.$el.removeClass('show');
 		}
-		this.render();
 	}
 
 });

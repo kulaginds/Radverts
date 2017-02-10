@@ -25,7 +25,6 @@ Radverts.Views.Administration = Backbone.View.extend({
 		} else {
 			this.$el.removeClass('show');
 		}
-		this.render();
 	}
 
 });
