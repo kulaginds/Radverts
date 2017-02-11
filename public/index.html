@@ -38,9 +38,7 @@
 		<div id="<%=target%>" class="collapse filter_panel">
 			<div class="panel panel-default filter-panel">
 				<div class="panel-heading"><%=panel_title%></div>
-				<div class="panel-body">
-					<%=search_form%>
-				</div>
+				<div class="panel-body"></div>
 			</div>
 		</div>
 	</script>
@@ -52,23 +50,21 @@
 			</ul>
 		</nav>
 	</script>
+	<script type="text/template" id="form_group_template">
+		<label for="query"><%=title%>:</label>
+	</script>
+	<script type="text/template" id="option_template">
+		<option value="<%=value%>"><%=title%></option>
+	</script>
 	<script type="text/template" id="section_two_column_template">
 		<div class="row">
-			<div class="col-md-4 sidebar">
-				<%=sidebar%>
-			</div>
-			<div class="col-md-8">
-				<%=breadcrumb%>
-				<%=content%>
-				<% if (typeof(pagination) !== "undefined") { %>
-					<%=pagination%>
-				<% } %>
-			</div>
+			<div class="col-md-4 sidebar"></div>
+			<div class="col-md-8 content"></div>
 		</div>
 	</script>
 	<script type="text/template" id="section_one_column_template">
 		<div class="row">
-			<div class="col-md-12">
+			<div class="col-md-12 content">
 				<%=breadcrumb%>
 				<%=content%>
 				<% if (typeof(pagination) !== "undefined") { %>
@@ -497,6 +493,12 @@
 	<script src="/js/app/components/header.js"></script>
 	<script src="/js/app/components/topmenu.js"></script>
 	<script src="/js/app/components/content.js"></script>
+	<script src="/js/app/components/button.js"></script>
+	<script src="/js/app/components/filterpanel.js"></script>
+	<script src="/js/app/components/formgroup.js"></script>
+	<script src="/js/app/components/inputtext.js"></script>
+	<script src="/js/app/components/inputselect.js"></script>
+	<script src="/js/app/components/catalog/searchform.js"></script>
 	<!-- application sections -->
 	<script src="/js/app/sections/catalog.js"></script>
 	<script src="/js/app/sections/myadverts.js"></script>
