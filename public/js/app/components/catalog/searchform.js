@@ -11,6 +11,7 @@ Radverts.Views.CatalogSearchForm = Backbone.View.extend({
 	},
 
 	render:function() {
+		// поле "Запрос"
 		this.query = new Radverts.Views.InputText({
 			name:'query',
 			placeholder:'введите ключевые слова'
@@ -23,6 +24,7 @@ Radverts.Views.CatalogSearchForm = Backbone.View.extend({
 
 		this.$el.append(group.el);
 
+		// поле "Категория"
 		this.category = new Radverts.Views.InputSelect({
 			name:'category',
 			options:categories
@@ -35,6 +37,7 @@ Radverts.Views.CatalogSearchForm = Backbone.View.extend({
 
 		this.$el.append(group.el);
 
+		// поле "Сортировать"
 		this.sort = new Radverts.Views.InputSelect({
 			name:'sort',
 			options:sort_options

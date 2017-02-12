@@ -8,15 +8,26 @@ Radverts.Views.Giveadv = Backbone.View.extend({
 
 	className:'container',
 
-	initialize:function(options) {
-		this.template = template(options.id + '_template');
+	template:template('section_one_column_template'),
 
+	initialize:function(options) {
 		this.model.on('change:active', this.updateActive, this);
 		this.render();
 	},
 
 	render:function() {
-		this.$el.html(this.template({}));
+		this.$el.html(this.template());
+
+		var breadcrumb = new Radverts.Views.Breadcrumb({ collection:breadcrumb_collection });
+		var pagination = new Radverts.Views.Pagination({ previous_title:'Назад' });
+		var createform = new Radverts.Views.GiveadvCreateForm();
+
+		pagination.hideNext();
+
+		this.$el.find('.content')
+						.append(breadcrumb.el)
+						.append(pagination.el)
+						.append(createform.el);
 	},
 
 	updateActive:function(model, active) {
