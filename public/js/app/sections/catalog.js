@@ -27,7 +27,10 @@ Radverts.Views.Catalog = Backbone.View.extend({
 			search_form:this.search_form.el
 		});
 		var breadcrumb = new Radverts.Views.Breadcrumb({ collection:breadcrumb_collection });
-		var list = new Radverts.Views.Adverts({ collection:catalog_adverts });
+		var list = new Radverts.Views.Adverts({
+			collection:catalog_adverts,
+			state:'catalog'
+		});
 
 		this.$el.find('.sidebar').html(filter_panel.el);
 		this.$el.find('.content')

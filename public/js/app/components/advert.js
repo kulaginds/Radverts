@@ -38,9 +38,10 @@ Radverts.Views.Advert = Backbone.View.extend({
 
 	className:'panel panel-default',
 
-	template:template('advert_template'),
+	initialize:function(options) {
+		this.state    = options.state || 'catalog';
+		this.template = template(this.state + '_advert_template');
 
-	initialize:function() {
 		this.render();
 	},
 
@@ -56,7 +57,9 @@ Radverts.Views.Adverts = Backbone.View.extend({
 
 	className:'list',
 
-	initialize:function() {
+	initialize:function(options) {
+		this.state = options.state;
+
 		this.render();
 	},
 
@@ -68,7 +71,10 @@ Radverts.Views.Adverts = Backbone.View.extend({
 	},
 
 	addOne:function(model) {
-		var view = new Radverts.Views.Advert({ model:model });
+		var view = new Radverts.Views.Advert({
+			model:model,
+			state:this.state
+		});
 
 		this.$el.append(view.el);
 	}
