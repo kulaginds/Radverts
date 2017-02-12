@@ -6,7 +6,7 @@ Radverts.Views.TopMenuItem = Backbone.View.extend({
 
 	tagName:'li',
 
-	template:template('top_menu_item_template'),
+	template:template('item_template'),
 
 	events: {
 		'click a':'itemClick'
@@ -36,7 +36,6 @@ Radverts.Views.TopMenuItem = Backbone.View.extend({
 		} else {
 			this.$el.removeClass('active');
 		}
-		this.render();
 	}
 
 });

@@ -14,7 +14,7 @@
 	<div id="app"></div>
 
 	<!-- templates -->
-	<script type="text/template" id="top_menu_item_template">
+	<script type="text/template" id="item_template">
 		<a href="<%= url %>"><%= title %></a>
 	</script>
 	<script type="text/template" id="header_template">
@@ -43,18 +43,29 @@
 		</div>
 	</script>
 	<script type="text/template" id="pagination_template">
-		<nav aria-label="pagination">
-			<ul class="pager">
-				<li class="previous"><a href="#"><span aria-hidden="true">&larr;</span> <%=previous_page_title%></a></li>
-				<li class="next"><a href="#"><%=next_page_title%> <span aria-hidden="true">&rarr;</span></a></li>
-			</ul>
-		</nav>
+		<ul class="pager">
+			<li class="previous"><a href="#"><span aria-hidden="true">&larr;</span> <%=previous_title%></a></li>
+			<li class="next"><a href="#"><%=next_title%> <span aria-hidden="true">&rarr;</span></a></li>
+		</ul>
 	</script>
 	<script type="text/template" id="form_group_template">
 		<label for="query"><%=title%>:</label>
 	</script>
 	<script type="text/template" id="option_template">
 		<option value="<%=value%>"><%=title%></option>
+	</script>
+	<script type="text/template" id="advert_template">
+		<div class="panel-heading">
+			<h4><%=title%></h4>
+		</div>
+		<div class="panel-body">
+			<p><%=description%></p>
+		</div>
+		<div class="panel-footer">
+			Создано: <time datetime="<%=created_at.toISOString()%>" pubdate><%=created_at.toLocaleString('ru')%></time>
+			<a href="#" class="btn btn-info pull-right readmore"><i class="glyphicon glyphicon-info-sign"></i> Подробнее</a>
+			<div class="clearfix"></div>
+		</div>
 	</script>
 	<script type="text/template" id="section_two_column_template">
 		<div class="row">
@@ -242,13 +253,13 @@
 							<div class="clearfix"></div>
 						</div>
 					</div>
+					<nav aria-label="pagination">
+						<ul class="pager">
+							<li class="previous disabled"><a href="#"><span aria-hidden="true">&larr;</span> Previous</a></li>
+							<li class="next"><a href="#">Next <span aria-hidden="true">&rarr;</span></a></li>
+						</ul>
+					</nav>
 				</div>
-				<nav aria-label="pagination">
-					<ul class="pager">
-						<li class="previous disabled"><a href="#"><span aria-hidden="true">&larr;</span> Previous</a></li>
-						<li class="next"><a href="#">Next <span aria-hidden="true">&rarr;</span></a></li>
-					</ul>
-				</nav>
 			</div>
 		</div>
 	</script>
@@ -360,13 +371,13 @@
 							<div class="clearfix"></div>
 						</div>
 					</div>
+					<nav aria-label="pagination">
+						<ul class="pager">
+							<li class="previous disabled"><a href="#"><span aria-hidden="true">&larr;</span> Previous</a></li>
+							<li class="next"><a href="#">Next <span aria-hidden="true">&rarr;</span></a></li>
+						</ul>
+					</nav>
 				</div>
-				<nav aria-label="pagination">
-					<ul class="pager">
-						<li class="previous disabled"><a href="#"><span aria-hidden="true">&larr;</span> Previous</a></li>
-						<li class="next"><a href="#">Next <span aria-hidden="true">&rarr;</span></a></li>
-					</ul>
-				</nav>
 			</div>
 		</div>
 	</script>
@@ -469,13 +480,13 @@
 							<div class="clearfix"></div>
 						</div>
 					</div>
+					<nav aria-label="pagination">
+						<ul class="pager">
+							<li class="previous disabled"><a href="#"><span aria-hidden="true">&larr;</span> Previous</a></li>
+							<li class="next"><a href="#">Next <span aria-hidden="true">&rarr;</span></a></li>
+						</ul>
+					</nav>
 				</div>
-				<nav aria-label="pagination">
-					<ul class="pager">
-						<li class="previous disabled"><a href="#"><span aria-hidden="true">&larr;</span> Previous</a></li>
-						<li class="next"><a href="#">Next <span aria-hidden="true">&rarr;</span></a></li>
-					</ul>
-				</nav>
 			</div>
 		</div>
 	</script>
@@ -498,6 +509,9 @@
 	<script src="/js/app/components/formgroup.js"></script>
 	<script src="/js/app/components/inputtext.js"></script>
 	<script src="/js/app/components/inputselect.js"></script>
+	<script src="/js/app/components/breadcrumb.js"></script>
+	<script src="/js/app/components/pagination.js"></script>
+	<script src="/js/app/components/advert.js"></script>
 	<script src="/js/app/components/catalog/searchform.js"></script>
 	<!-- application sections -->
 	<script src="/js/app/sections/catalog.js"></script>

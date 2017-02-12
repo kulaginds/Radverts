@@ -37,6 +37,29 @@ var sections_collection = new Radverts.Collections.Sections([
 	}
 ]);
 
+// Breadcrumbs
+var breadcrumb_collection = new Radverts.Collections.Breadcrumbs([
+	{
+		title:'Главная',
+		url:'#catalog',
+		active:true
+	}
+]);
+
+// Catalog adverts
+var catalog_adverts = new Radverts.Collections.Adverts([
+	{
+		title:'Advert title',
+		description:'Description of advert',
+		created_at:new Date(Date.parse('2017-02-12T10:03:08.759Z'))
+	},
+	{
+		title:'Advert title',
+		description:'Description of advert',
+		created_at:new Date(Date.parse('2017-02-12T10:05:08.759Z'))
+	}
+]);
+
 sections_collection.addCallbacks();
 
 var top_menu_view = new Radverts.Views.TopMenu({
