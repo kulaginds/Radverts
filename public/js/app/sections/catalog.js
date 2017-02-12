@@ -18,10 +18,7 @@ Radverts.Views.Catalog = Backbone.View.extend({
 	render:function() {
 		this.$el.html(this.template());
 
-		this.search_form = new Radverts.Views.CatalogSearchForm({
-			categories:categories
-		});
-
+		this.search_form = new Radverts.Views.CatalogSearchForm();
 		var filter_panel = new Radverts.Views.FilterPanel({
 			target:'catalog',
 			search_form:this.search_form.el

@@ -54,6 +54,13 @@
 	<script type="text/template" id="option_template">
 		<option value="<%=value%>"><%=title%></option>
 	</script>
+	<script type="text/template" id="checkbox_template">
+		<div class="checkbox">
+			<label>
+				<input type="checkbox" name="<%=name%>"> <span class="label label-<%=icon%>"><%=title%></span>
+			</label>
+		</div>
+	</script>
 	<script type="text/template" id="catalog_advert_template">
 		<div class="panel-heading">
 			<h4><%=title%></h4>
@@ -114,6 +121,28 @@
 			<div class="btn-group pull-right" role="group" aria-label="manage advert">
 				<button class="btn btn-danger"><span class="glyphicon glyphicon-ban-circle" aria-hidden="true"></span> Блокировать</button>
 				<a href="https://vk.com/id<%=user_id%>" class="btn btn-info pull-right readmore" target="_blank"><i class="glyphicon glyphicon-user"></i> Автор</a>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</script>
+	<script type="text/template" id="user_template">
+		<div class="panel-body">
+			<img src="<%=picture%>" class="img-responsive" alt="user picture" align="left">
+			<h4><%=name%></h4>
+		<% if (administrator) { %>
+			<span class="label label-success">администратор</span>
+		<% } if (moderator) { %>
+			<span class="label label-info">модератор</span>
+		<% } if (banned) { %>
+			<span class="label label-danger">блокирован</span>
+		<% } %>
+			<p>Создано: <time datetime="<%=created_at.toISOString()%>" pubdate><%=created_at.toLocaleString('ru')%></time></p>
+		</div>
+		<div class="panel-footer">
+			<div class="btn-group pull-right" role="group" aria-label="manage user">
+				<a href="#" class="btn btn-success administrator"><i class="glyphicon glyphicon-tower"></i> админ.</a>
+				<a href="#" class="btn btn-info moderator"><i class="glyphicon glyphicon-user"></i> модератор</a>
+				<a href="#" class="btn btn-danger banned"><span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span> блокировать</a>
 			</div>
 			<div class="clearfix"></div>
 		</div>
@@ -553,10 +582,13 @@
 	<script src="/js/app/components/formgroup.js"></script>
 	<script src="/js/app/components/inputtext.js"></script>
 	<script src="/js/app/components/inputselect.js"></script>
+	<script src="/js/app/components/inputcheckbox.js"></script>
 	<script src="/js/app/components/breadcrumb.js"></script>
 	<script src="/js/app/components/pagination.js"></script>
 	<script src="/js/app/components/advert.js"></script>
+	<script src="/js/app/components/user.js"></script>
 	<script src="/js/app/components/catalog/searchform.js"></script>
+	<script src="/js/app/components/administration/searchform.js"></script>
 	<!-- application sections -->
 	<script src="/js/app/sections/catalog.js"></script>
 	<script src="/js/app/sections/myadverts.js"></script>

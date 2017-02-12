@@ -15,13 +15,6 @@ Radverts.Models.Advert = Backbone.Model.extend({
 		updated_at:new Date(Date.parse('2017-02-12T10:05:08.759Z')),
 		created_at:new Date(Date.parse('2017-02-12T10:05:08.759Z'))
 
-	},
-
-	parse:function(response, options) {
-		response.created_at = new Date(Date.parse(response.created_at));
-		response.updated_at = new Date(Date.parse(response.updated_at));
-
-		return response;
 	}
 
 });

@@ -2,6 +2,18 @@
 	Application data
 */
 
+// Sort options
+var sort_options = new Radverts.Collections.Options([
+	{
+		title:'От новых к старым',
+		value:'DESC'
+	},
+	{
+		title:'От старых к новым',
+		value:'ASC'
+	}
+]);
+
 // Sections
 var sections_collection = new Radverts.Collections.Sections([
 	{
@@ -104,5 +116,18 @@ var moderation_adverts = new Radverts.Collections.Adverts([
 		title:'Advert title',
 		description:'Description of advert',
 		status:'process'
+	}
+]);
+
+// Administration users
+var administration_users = new Radverts.Collections.Users([
+	{
+		banned:1
+	},
+	{
+		moderator:1
+	},
+	{
+		administrator:1
 	}
 ]);
