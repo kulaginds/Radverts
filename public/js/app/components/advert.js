@@ -10,8 +10,8 @@ Radverts.Models.Advert = Backbone.Model.extend({
 		category_id:0,
 		title:'Test advert',
 		description:'Test description',
-		status:'success',
-		error_message:'',
+		status:'error',
+		error_message:'test error',
 		updated_at:'2017-02-12T10:05:08.759Z',
 		created_at:'2017-02-12T10:05:08.759Z'
 
@@ -66,7 +66,7 @@ Radverts.Views.Adverts = Backbone.View.extend({
 	render:function() {
 		this.collection.each(this.addOne, this);
 
-		this.pagination = new Radverts.Views.Pagination({});
+		this.pagination = new Radverts.Views.Pagination();
 		this.$el.append(this.pagination.el);
 	},
 

@@ -67,3 +67,26 @@ var catalog_adverts = new Radverts.Collections.Adverts([
 		created_at:new Date(Date.parse('2017-02-12T10:05:08.759Z'))
 	}
 ]);
+
+// Myadverts adverts
+var myadverts_adverts = new Radverts.Collections.Adverts([
+	{
+		title:'Advert title',
+		description:'Description of advert',
+		created_at:new Date(Date.parse('2017-02-12T10:03:08.759Z'))
+	},
+	{
+		title:'Advert title',
+		description:'Description of advert',
+		created_at:new Date(Date.parse('2017-02-12T10:05:08.759Z')),
+		status:'process',
+		error_message:''
+	},
+	{
+		title:'Advert title',
+		description:'Description of advert',
+		created_at:new Date(Date.parse('2017-02-12T10:05:08.759Z')),
+		status:'success',
+		error_message:''
+	}
+]);
