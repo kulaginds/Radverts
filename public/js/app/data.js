@@ -59,12 +59,12 @@ var catalog_adverts = new Radverts.Collections.Adverts([
 	{
 		title:'Advert title',
 		description:'Description of advert',
-		created_at:new Date(Date.parse('2017-02-12T10:03:08.759Z'))
+		status:'success'
 	},
 	{
 		title:'Advert title',
 		description:'Description of advert',
-		created_at:new Date(Date.parse('2017-02-12T10:05:08.759Z'))
+		status:'success'
 	}
 ]);
 
@@ -73,20 +73,36 @@ var myadverts_adverts = new Radverts.Collections.Adverts([
 	{
 		title:'Advert title',
 		description:'Description of advert',
-		created_at:new Date(Date.parse('2017-02-12T10:03:08.759Z'))
+		status:'error',
+		error_message:'test message'
 	},
 	{
 		title:'Advert title',
 		description:'Description of advert',
-		created_at:new Date(Date.parse('2017-02-12T10:05:08.759Z')),
-		status:'process',
-		error_message:''
+		status:'process'
 	},
 	{
 		title:'Advert title',
 		description:'Description of advert',
-		created_at:new Date(Date.parse('2017-02-12T10:05:08.759Z')),
-		status:'success',
-		error_message:''
+		status:'success'
+	}
+]);
+
+// Moderation adverts
+var moderation_adverts = new Radverts.Collections.Adverts([
+	{
+		title:'Advert title',
+		description:'Description of advert',
+		status:'process'
+	},
+	{
+		title:'Advert title',
+		description:'Description of advert',
+		status:'process'
+	},
+	{
+		title:'Advert title',
+		description:'Description of advert',
+		status:'process'
 	}
 ]);

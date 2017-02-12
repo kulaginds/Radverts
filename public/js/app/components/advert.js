@@ -10,10 +10,10 @@ Radverts.Models.Advert = Backbone.Model.extend({
 		category_id:0,
 		title:'Test advert',
 		description:'Test description',
-		status:'error',
-		error_message:'test error',
-		updated_at:'2017-02-12T10:05:08.759Z',
-		created_at:'2017-02-12T10:05:08.759Z'
+		status:'process',
+		error_message:'',
+		updated_at:new Date(Date.parse('2017-02-12T10:05:08.759Z')),
+		created_at:new Date(Date.parse('2017-02-12T10:05:08.759Z'))
 
 	},
 
