@@ -62,13 +62,6 @@ Radverts.Views.CatalogSearchForm = Backbone.View.extend({
 		});
 
 		this.$el.append(group.el);
-
-		var submit = new Radverts.Views.Button({
-			type:'submit',
-			title:'Поиск'
-		});
-
-		this.$el.append(submit.el);
 	}
 
 });
