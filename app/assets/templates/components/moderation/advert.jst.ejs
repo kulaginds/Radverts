@@ -1,0 +1,19 @@
+<div class="panel-heading">
+	<h4 class="pull-left"><%=title%></h4>
+	<div class="btn-group pull-right" role="group" aria-label="manage advert">
+		<button class="btn btn-success approve"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Одобрить</button>
+		<button class="btn btn-danger reject"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Отклонить</button>
+	</div>
+	<div class="clearfix"></div>
+</div>
+<div class="panel-body">
+	<p><%=description%></p>
+</div>
+<div class="panel-footer">
+	<span class="hidden-xs">Создано: <time datetime="<%=created_at.toISOString()%>" pubdate><%=created_at.toLocaleString('ru')%></time></span>
+	<div class="btn-group pull-right" role="group" aria-label="manage advert">
+		<button class="btn btn-danger"><span class="glyphicon glyphicon-ban-circle" aria-hidden="true"></span> Блокировать</button>
+		<a href="https://vk.com/id<%=user_id%>" class="btn btn-info pull-right readmore" target="_blank"><i class="glyphicon glyphicon-user"></i> Автор</a>
+	</div>
+	<div class="clearfix"></div>
+</div>
